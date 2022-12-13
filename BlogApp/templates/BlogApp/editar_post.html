@@ -1,0 +1,32 @@
+{% extends 'BlogApp/index.html' %}
+    {% load static %}
+
+{% block titulo_ppal %}
+Editar Post
+{% endblock titulo_ppal %}
+
+{% block imagen %}
+{% static 'BlogApp/assets/img/deatras.jpg'%}
+{% endblock imagen %}
+
+{% block bienvenida %}
+Por si te retractas..
+{% endblock bienvenida %}
+
+{% block contenido %}
+
+<form action="" method="post" enctype="multipart/form-data" >
+    {% csrf_token %}
+
+
+    <table>
+        {{form.media}}
+        {{form.as_table}}
+    </table>
+    <br>
+
+    <button class="btn btn-primary" type="submit"> Guardar</button>
+    <a class="btn btn-primary" href="{% url 'ver posts' %}" style="position:center;">Cancelar</a>
+
+</form>
+{% endblock contenido %}

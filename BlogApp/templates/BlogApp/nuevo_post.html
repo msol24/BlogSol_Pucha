@@ -1,0 +1,19 @@
+{% extends 'BlogApp/index.html' %}
+    {% load static %}
+
+{% block titulo_ppal %}
+New Post
+{% endblock titulo_ppal %}
+
+{% block imagen %}
+{% static 'BlogApp/assets/img/deatras.jpg'%}
+{% endblock imagen %}
+
+{% block bienvenida %}
+¿Qué recomendas para escuchar?
+{% endblock bienvenida %}
+
+{% block contenido %}
+<li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'crear post' %}">Chat</a></li>
+
+{% endblock contenido %}

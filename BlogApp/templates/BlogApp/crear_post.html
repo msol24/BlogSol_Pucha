@@ -1,0 +1,31 @@
+{% extends 'BlogApp/index.html' %}
+    {% load static %}
+
+{% block titulo_ppal %}
+Crear Nuevo Post
+{% endblock titulo_ppal %}
+
+{% block imagen %}
+{% static 'BlogApp/assets/img/deatras.jpg'%}
+{% endblock imagen %}
+
+{% block bienvenida %}
+¿Qué recomendas para escuchar?
+{% endblock bienvenida %}
+
+{% block contenido %}
+
+<form action="" method="post" enctype="multipart/form-data" >
+    {% csrf_token %}
+
+
+    <table>
+        {{form.media}}
+        {{form.as_table}}
+    </table>
+    <br>
+
+    <button class="btn btn-primary" type="submit"> Crear Post</button>
+
+</form>
+{% endblock contenido %}

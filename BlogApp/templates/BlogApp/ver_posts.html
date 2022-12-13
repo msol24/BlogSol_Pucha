@@ -1,0 +1,44 @@
+{% extends 'BlogApp/index.html' %}
+    {% load static %}
+
+{% block titulo_ppal %}
+Todos los Posts
+{% endblock titulo_ppal %}
+
+{% block imagen %}
+{% static 'BlogApp/assets/img/pj.jpg'%}
+{% endblock imagen %}
+
+{% block bienvenida %}
+
+{% endblock bienvenida %}
+
+{% block contenido %}
+
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+            <!-- Post preview-->
+
+            {% if posts %}
+
+                {% for post in posts %}
+                    <div class="post-preview">
+                        <a href="{% url 'detalle post' post.titulo %}">
+                            <h2>{{post.titulo}}</h2>
+                            <h3>{{post.subtitulo}}</h3>
+                        </a>
+                        <p class="post-meta">
+                            Post de
+                            <strong><a href="{% url 'perfil user' post.usuario %}">{{post.usuario}}</a></strong>
+                            {{post.fecha}}
+                        </p>
+                    </div>
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                    <!-- Post preview-->
+                {% endfor %}
+
+            {% endif %}
+
+{% endblock contenido %}

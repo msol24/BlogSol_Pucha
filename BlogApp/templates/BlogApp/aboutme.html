@@ -1,0 +1,78 @@
+{% extends 'BlogApp/index.html' %}
+    {% load static %}
+
+{% block titulo_ppal %}
+About Me
+{% endblock titulo_ppal %}
+
+{% block imagen %}
+{% static 'BlogApp/assets/img/electric-guitar.jpg'%}
+{% endblock imagen %}
+
+{% block bienvenida %}
+Maria Sol Pucciarelli
+{% endblock bienvenida %}
+
+{% block contenido %}
+
+<div class="container-fluid mb-3">
+    <div class="container">
+        <div class="row">
+            <div class="container-fluid">
+                <div class="container text-center">
+                    <p>
+                        Blog creado por María Sol Pucciarelli, 
+                        Sol para todo el mundo 🖐🏼
+                    </p>
+                    <p>
+                        Idea basada en un blog para reseñar nuevos discos.
+                        La música es lo que me mueve, y de lo que mi mood depende, 
+                        este espacio es una idea muy leve de como me gustaría que fuese una red social exclusiva para melómanos incansables como yo.
+                    </p>
+
+                    <p>
+                        Agradezco mucho la enzeñanza impartida por CoderHouse, y a mi familia por brindarme el tiempo que le dediqué a este proyectito. 
+                    </p>    
+                    <p>
+                        Enlaces por aquí abajo 👇🏽
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- Footer-->
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <ul class="list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="https://www.linkedin.com/in/maria-sol-pucciarelli-390721232/">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fa-brands fa-linkedin fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://www.instagram.com/msolpucciarelli/">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fa-brands fa-instagram fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://github.com/msol24">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+
+{% endblock contenido %}

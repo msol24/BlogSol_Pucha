@@ -1,0 +1,30 @@
+{% extends 'BlogApp/index.html' %}
+    {% load static %}
+
+{% block titulo_ppal %}
+Foro
+{% endblock titulo_ppal %}
+
+{% block imagen %}
+{% static 'BlogApp/assets/img/electric-guitar.jpg'%}
+{% endblock imagen %}
+
+{% block bienvenida %}
+Comentario enviado con éxito
+{% endblock bienvenida %}
+
+{% block contenido %}
+
+<div class="container-fluid mb-3">
+    <div class="container">
+        <div class="row">
+            <div class="container-fluid">
+                <div class="container text-center">
+                    <a class="btn btn-primary" href="{% url 'ver posts' %}" style="position:center;">Volver</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock contenido %}

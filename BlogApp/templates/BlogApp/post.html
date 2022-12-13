@@ -1,0 +1,79 @@
+{% extends 'BlogApp/index.html' %}
+    {% load static %}
+
+{% block titulo_ppal %}
+    {{post.titulo}}
+{% endblock titulo_ppal %}
+
+{% block imagen %}
+
+    {{post.imagen.url}}
+
+
+{% endblock imagen %}
+
+{% block bienvenida %}
+    {{post.subtitulo}}
+{% endblock bienvenida %}
+
+{% block contenido %}
+    {{post.cuerpo | safe}}
+
+
+<p class="post-meta">
+    Post de
+    <a href="{% url 'perfil user' post.usuario %}">{{post.usuario}}</a>  🤘🏽 
+    {{post.fecha}}
+
+    <div class="container-fluid mb-3">
+        <div class="container">
+            <div class="row">
+                <div class="container-fluid">
+                    <div class="container text-center">
+                        {%if request.user == post.usuario or request.user.is_superuser%}
+                        <a class="btn btn-primary" href="{% url 'editar post' post.titulo %}" style="position:center;">Editar</a>
+                        <a class="btn btn-primary" href="{% url 'eliminar post' post.titulo %}" style="position:center;">Eliminar</a>
+                        {%endif%}   
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid mb-3">
+        <div class="container">
+            <div class="row">
+                <div class="container-fluid">
+                    <div class="container text-center">
+                        <a class="btn btn-primary" href="{% url 'comentario' post.pk %}" style="position:center;">Comenta</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% for comment in comentarios %}
+
+    <section class="mb-5">
+        <div class="card bg-light">
+            <div class="card-body">
+                <!-- Comment with nested comments-->
+                <div class="d-flex mb-4">
+                    <div class="ms-4">
+                        <div class="fw-bold mb-2"><a href="{% url 'perfil user' comment.usuario %}">{{comment.usuario}} </a>
+                        <div class="fw-bold mb-2">{{comment.fecha}}</div>
+                        <strong><p1 class="text-muted fst-italic mb-3">{{comment.comentario}}</p1></strong>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endfor %}
+
+
+{% endblock contenido %}

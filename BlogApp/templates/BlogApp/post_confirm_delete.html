@@ -1,0 +1,37 @@
+{% extends 'BlogApp/index.html' %}
+    {% load static %}
+
+{% block titulo_ppal %}
+Goodbye cruel Post!
+{% endblock titulo_ppal %}
+
+{% block imagen %}
+{% static 'BlogApp/assets/img/gnr.jpg'%}
+{% endblock imagen %}
+
+{% block bienvenida %}
+¿Estas seguro que desas eliminar "{{post.titulo}}"?
+{% endblock bienvenida %}
+
+
+{% block contenido %}
+
+
+
+<form method="post"> {% csrf_token %}
+    <div class="container-fluid mb-3">
+        <div class="container">
+            <div class="row">
+                <div class="container-fluid">
+                    <div class="container text-center">
+                        <button class="btn btn-primary" type="submit"> Eliminar</button>
+                        <a class="btn btn-primary" href="{% url 'ver posts' %}" style="position:center;">Cancelar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</form>
+
+{% endblock contenido %}

@@ -1,0 +1,31 @@
+{% extends 'BlogApp/index.html' %}
+    {% load static %}
+
+{% block titulo_ppal %}
+Rock and Blog
+{% endblock titulo_ppal %}
+
+{% block imagen %}
+{% static 'BlogApp/assets/img/gnr.jpg'%}
+{% endblock imagen %}
+
+{% block bienvenida %}
+Nos veremos otra vez 🤘🏽
+{% endblock bienvenida %}
+
+
+{% block contenido %}
+
+<div class="container-fluid mb-3">
+    <div class="container">
+        <div class="row">
+            <div class="container-fluid">
+                <div class="container text-center">
+                    <a class="btn btn-primary" href="{% url 'home' %}" style="position:center;">Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock contenido %}

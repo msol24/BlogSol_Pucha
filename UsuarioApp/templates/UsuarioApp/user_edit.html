@@ -1,0 +1,26 @@
+{% extends 'BlogApp/index.html' %}
+    {% load static %}
+
+{% block titulo_ppal %}
+Perfil
+{% endblock titulo_ppal %}
+
+{% block imagen %}
+{% static 'BlogApp/assets/img/main.jpg'%}
+{% endblock imagen %}
+
+{% block bienvenida %}
+
+{% endblock bienvenida %}
+
+{% block contenido %}
+<form action="" method="POST">
+
+    {% csrf_token %}
+
+    {{form.as_p}}
+
+    <button class="btn btn-primary" type="submit"> Guardar Cambios</button>
+    <a class="btn btn-primary" href="{% url 'perfil user main' %}" style="position:center;">Cancelar</a>
+</form>
+{% endblock contenido %}
